@@ -272,13 +272,11 @@ int main(int argc, char **argv)
 	create_files(num_files);
 	append_files(num_files, buf, size);
 	write_files(num_files, buf, size);
-	write_files(num_files, buf, size * 4);
 //	system("echo 1 > /proc/fs/NOVA/pmem0/timing_stats");
 	write_files_512(num_files, buf);
 	read_files(num_files, buf, size);
-	system("echo 1 > /proc/fs/NOVA/pmem0/timing_stats");
-	read_files(num_files, buf, size * 4);
-	system("cat /proc/fs/NOVA/pmem0/timing_stats");
+//	system("echo 1 > /proc/fs/NOVA/pmem0/timing_stats");
+//	system("cat /proc/fs/NOVA/pmem0/timing_stats");
 	delete_files(num_files);
 
 	free(buf1);
